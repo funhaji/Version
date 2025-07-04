@@ -39,18 +39,23 @@ end
         end
     end
 
-    -- New: Check for loadstring tampering
     local __loadstring = rawget(_G, "loadstring")
     if type(__loadstring) == "function" then
-        local original_loadstring = loadstring -- Get the original loadstring if available
+        local original_loadstring = loadstring
         if __loadstring ~= original_loadstring then
             __reportTamper("Loadstring tampering detected")
         end
     end
 
+    -- New: Check for getloadedfile
+    local __getloadedfile = rawget(_G, "getloadedfile")
+    if __getloadedfile ~= nil then
+        __reportTamper("getloadedfile detected")
+    end
+
     
-local function __bGbUn(hex)
-    local k='82d3e52f92009b24'
+local function _mvmPCM(hex)
+    local k='739eb80c02633091'
     local out=''
 
     local _string_lib = rawget(_G, "string") or string
@@ -90,132 +95,132 @@ local function __bGbUn(hex)
 end
 
     local __S = {
-    [15] = function(state)
-        local ___RwR=((19+19)^(1+1))
-        return state + 1
-    end,
-    [2] = function(state)
-        local ___MNC=((13+6)^(1+1))
-        return state + 1
-    end,
-    [10] = function(state)
-        local ___XmQgLI=math.floor((7+1)/(0+47))
-        return state + 1
-    end,
-    [24] = function(state)
-        local __vjoH=((14+21)^(1+1))
-        return state + 1
-    end,
-    [26] = function(state)
-        print(__bGbUn("5057085f0a"))
-        return state + 1
-    end,
-    [25] = function(state)
-        local __ffrKUx=string.char((23+28))
-        return state + 1
-    end,
-    [9] = function(state)
-        local __JreHo=math.max((22+10),(11+38))
+    [17] = function(state)
+        local _fdez=math.floor((6+4)/(6+9))
         return state + 1
     end,
     [4] = function(state)
-        local _jBZ=((3+24)^(1+1))
-        return state + 1
-    end,
-    [5] = function(state)
-        local __iqVE=((2+17)^(1+1))
-        return state + 1
-    end,
-    [16] = function(state)
-        local __Nkr=(12+14)*(4+3)-(60+33)
-        return state + 1
-    end,
-    [19] = function(state)
-        local ___Uci=string.char((44+48))
-        return state + 1
-    end,
-    [1] = function(state)
-        local ___Lfujj=string.char((36+3))
-        return state + 1
-    end,
-    [7] = function(state)
-        local ___LQgHiq=((10+37)^(1+1))
-        return state + 1
-    end,
-    [29] = function(state)
-        local __nAaJi=(47+29)+(69+15)
-        return state + 1
-    end,
-    [28] = function(state)
-        local ___MNC=(17+17)*(52+4)-(4+5)
-        return state + 1
-    end,
-    [12] = function(state)
-        local _mXgMfm=math.max((17+61),(23+29))
-        return state + 1
-    end,
-    [11] = function(state)
-        local __iPRLG=math.max((62+33),(33+25))
-        return state + 1
-    end,
-    [23] = function(state)
-        local __aAnNKJ=(43+3)*(1+3)-(41+42)
-        return state + 1
-    end,
-    [14] = function(state)
-        local ___HkB=math.floor((6+35)/(2+20))
-        return state + 1
-    end,
-    [6] = function(state)
-        local _wvRMT=(4+2)+(8+64)
-        return state + 1
-    end,
-    [13] = function(state)
-        local ___GYd=math.floor((42+5)/(0+18))
-        return state + 1
-    end,
-    [27] = function(state)
-        local __Gakwxy=(13+20)+(73+24)
-        return state + 1
-    end,
-    [22] = function(state)
-        local _RXsA=math.floor((5+19)/(0+2))
+        local _gSc=(49+50)+(0+1)
         return state + 1
     end,
     [8] = function(state)
-        local ___wpu=(33+13)+(20+65)
+        local ___pwLsFs=(4+93)*(2+65)-(64+26)
         return state + 1
     end,
-    [21] = function(state)
-        local _NCqr=(23+12)*(12+51)-(22+15)
+    [24] = function(state)
+        local _NTp=math.floor((2+37)/(2+4))
         return state + 1
     end,
-    [32] = function(state)
-        local _=58.34245487428964
+    [15] = function(state)
+        local _WgmCW=math.max((16+56),(26+53))
+        return state + 1
+    end,
+    [1] = function(state)
+        local ___OIp=(55+8)+(55+42)
+        return state + 1
+    end,
+    [29] = function(state)
+        local _dhr=math.max((67+5),(8+73))
+        return state + 1
+    end,
+    [26] = function(state)
+        local _gln=(19+64)+(43+20)
+        return state + 1
+    end,
+    [2] = function(state)
+        local ___WcJDM=(51+6)*(11+70)-(17+27)
+        return state + 1
+    end,
+    [23] = function(state)
+        local _EzbTY=(15+44)+(1+4)
+        return state + 1
+    end,
+    [5] = function(state)
+        local _jPr=math.max((31+28),(2+3))
         return state + 1
     end,
     [20] = function(state)
-        local __FdYw=math.floor((3+6)/(13+10))
+        local _vtmSv=math.floor((14+24)/(13+26))
         return state + 1
     end,
-    [17] = function(state)
-        local _MbD=((1+3)^(1+1))
-        return state + 1
-    end,
-    [18] = function(state)
-        local __RlMQQW=(17+23)+(21+29)
-        return state + 1
-    end,
-    [31] = function(state)
-        local __Nyi=math.max((27+3),(57+6))
-        return state + 1
-    end,
-    [30] = function(state)
-        local ___wnoGD=((59+11)^(0+2))
+    [7] = function(state)
+        local ___IaryY=math.max((38+56),(4+6))
         return state + 1
     end,
     [3] = function(state)
-        local ___rQf=(71+24)*(56+15)-(24+50)
+        local __ClvvDF=string.char((39+33))
+        return state + 1
+    end,
+    [19] = function(state)
+        local _EYFgGx=math.floor((23+17)/(16+5))
+        return state + 1
+    end,
+    [22] = function(state)
+        local __AMX=(2+18)+(75+17)
+        return state + 1
+    end,
+    [12] = function(state)
+        local __bCu=(51+14)*(11+64)-(46+22)
+        return state + 1
+    end,
+    [31] = function(state)
+        local __sae=math.floor((30+18)/(44+3))
+        return state + 1
+    end,
+    [27] = function(state)
+        local ___zoLHv=((16+49)^(0+2))
+        return state + 1
+    end,
+    [21] = function(state)
+        local _KpUAVp=math.floor((1+3)/(4+5))
+        return state + 1
+    end,
+    [28] = function(state)
+        local _Zvo=math.max((3+14),(83+11))
+        return state + 1
+    end,
+    [13] = function(state)
+        local _EzbTY=math.floor((4+3)/(6+18))
+        return state + 1
+    end,
+    [25] = function(state)
+        local __RXHL=math.max((3+2),(10+4))
+        return state + 1
+    end,
+    [18] = function(state)
+        local _gwxap=math.floor((9+4)/(0+2))
+        return state + 1
+    end,
+    [9] = function(state)
+        local _momhU=string.char((38+6))
+        return state + 1
+    end,
+    [14] = function(state)
+        local ___VNwW=(2+43)*(45+23)-(32+3)
+        return state + 1
+    end,
+    [11] = function(state)
+        local __YPm=math.floor((20+2)/(3+22))
+        return state + 1
+    end,
+    [16] = function(state)
+        local ___RduzP=math.max((23+57),(16+40))
+        return state + 1
+    end,
+    [10] = function(state)
+        local ___GfI=(77+2)+(8+2)
+        return state + 1
+    end,
+    [6] = function(state)
+        print(_mvmPCM("5f5655090d"))
+        return state + 1
+    end,
+    [30] = function(state)
+        local ___eMEOM=(2+84)+(3+19)
+        return state + 1
+    end,
+    [32] = function(state)
+        local _=61.27043008738988
         return state + 1
     end
 }
