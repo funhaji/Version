@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be Mine... 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff6b9d;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            min-height: 80px;
+            align-items: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+        }
+
+        .yes-btn {
+            background: linear-gradient(45deg, #ff6b9d, #ff8a80);
+            color: white;
+            min-width: 120px;
+        }
+
+        .yes-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 107, 157, 0.4);
+        }
+
+        .no-btn {
+            background: linear-gradient(45deg, #64b5f6, #81c784);
+            color: white;
+            min-width: 120px;
+        }
+
+        .no-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(100, 181, 246, 0.4);
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff6b9d;
+            font-size: 20px;
+            animation: float 3s ease-in-out infinite;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .success-container {
+            display: none;
+            text-align: center;
+        }
+
+        .success-container.show {
+            display: block;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .success-title {
+            font-size: 2.5rem;
+            color: #ff6b9d;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        .success-message {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .celebration {
+            font-size: 3rem;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+            50% { transform: translateY(-50px) rotate(180deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            button {
+                padding: 12px 25px;
+                font-size: 1.1rem;
+                min-width: 100px;
+            }
+            
+            .button-container {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 25px 15px;
+            }
+            
+            button {
+                padding: 10px 20px;
+                font-size: 1rem;
+                min-width: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="question-container">
+            <h1>Be mine... 💕</h1>
+            <p class="subtitle">Hey Aniyiah! 💖</p>
+            <div class="button-container">
+                <button class="yes-btn" id="yesBtn">Okay! 💕</button>
+                <button class="no-btn" id="noBtn">No 😔</button>
+            </div>
+        </div>
+        
+        <div class="success-container" id="successContainer">
+            <h2 class="success-title">HELL YEAH!❤️🥵</h2>
+            <p class="success-message">I knew youd say yes NIGGER! 💕✨</p>
+            <div class="celebration">LOVE YOU A LOT</div>
+        </div>
+    </div>
+
+    <script>
+        let clickCount = 0;
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const questionContainer = document.getElementById('question-container');
+        const successContainer = document.getElementById('successContainer');
+
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 3 + 's';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
+        // Create hearts periodically
+        setInterval(createHeart, 2000);
+
+        // Handle "No" button clicks
+        noBtn.addEventListener('click', function() {
+            clickCount++;
+            
+            // Increase yes button size
+            const newSize = 120 + (clickCount * 30);
+            const newPadding = 15 + (clickCount * 5);
+            const newFontSize = 1.2 + (clickCount * 0.2);
+            
+            yesBtn.style.minWidth = newSize + 'px';
+            yesBtn.style.padding = newPadding + 'px ' + (newPadding + 15) + 'px';
+            yesBtn.style.fontSize = newFontSize + 'rem';
+            
+            // Shrink no button
+            const noSize = Math.max(60 - (clickCount * 15), 0);
+            const noPadding = Math.max(10 - (clickCount * 2), 0);
+            const noFontSize = Math.max(1.0 - (clickCount * 0.15), 0);
+            
+            if (clickCount >= 4) {
+                noBtn.style.display = 'none';
+            } else {
+                noBtn.style.minWidth = noSize + 'px';
+                noBtn.style.padding = noPadding + 'px ' + (noPadding + 10) + 'px';
+                noBtn.style.fontSize = noFontSize + 'rem';
+            }
+
+            // Add some playful messages
+            const messages = [
+                "Are you sure? 🥺",
+                "Please? 💕",
+                "Come on... 😘",
+                "Just say yes! 💖"
+            ];
+            
+            if (clickCount <= messages.length) {
+                const subtitle = document.querySelector('.subtitle');
+                subtitle.textContent = messages[clickCount - 1];
+                subtitle.style.animation = 'bounce 0.5s';
+                setTimeout(() => {
+                    subtitle.style.animation = '';
+                }, 500);
+            }
+
+            // Add shake effect to no button
+            noBtn.style.animation = 'bounce 0.5s';
+            setTimeout(() => {
+                noBtn.style.animation = '';
+            }, 500);
+        });
+
+        // Handle "Yes" button clicks
+        yesBtn.addEventListener('click', function() {
+            questionContainer.style.display = 'none';
+            successContainer.classList.add('show');
+            
+            // Create celebration hearts
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    createHeart();
+                }, i * 100);
+            }
+            
+            // Change background to more celebratory
+            document.body.style.background = 'linear-gradient(135deg, #ff6b9d 0%, #ffd6e8 50%, #fff0f5 100%)';
+        });
+
+        // Add touch support for better mobile experience
+        function addTouchSupport(element) {
+            element.addEventListener('touchstart', function() {
+                this.style.transform = 'translateY(-3px) scale(0.95)';
+            });
+            
+            element.addEventListener('touchend', function() {
+                this.style.transform = '';
+            });
+        }
+
+        addTouchSupport(yesBtn);
+        addTouchSupport(noBtn);
+    </script>
+</body>
+</html>
